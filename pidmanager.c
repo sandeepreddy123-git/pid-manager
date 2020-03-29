@@ -4,16 +4,16 @@
 #include<unistd.h>
 #define MIN_PID 100
 #define MAX_PID 1000
-#define ARR_SIZE MAX_PID-MIN_PID+1
+#define ARRAY MAX_PID-MIN_PID+1
 
-int pid_status[ARR_SIZE];       
+int statusofpid[ARRAY];       
 
 int allocate_map()        
 {
   int i;
-  for(i=0;i<ARR_SIZE;i++)
+  for(i=0;i<ARRAY;i++)
   {
-    pid_status[i]=0;
+    statusofpid[i]=0;
   }
   return 0;               
 }
@@ -21,7 +21,7 @@ int allocate_map()
 int allocate_pid()
 {
   int i;
-  for(i=0;i<ARR_SIZE;i++)
+  for(i=0;i<ARRAY;i++)
   {
     if(pid_status[i]==0)   
     {
