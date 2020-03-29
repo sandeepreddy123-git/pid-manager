@@ -58,17 +58,17 @@ int pid_check(int pid)
 {
   if(pid>=100)                        
   {
-    printf("\nPid %d assigned successfully...\n",pid);
+    printf("\nPid %d assigned successfully\n",pid);
     return 0;                               
   }
   else if(pid==1)                     
   {
-    printf("\npid allocation failed...\n"); 
+    printf("\npid allocation unsuccessfull\n"); 
     return 1;                         
   }
   else                              
   {
-    printf("\nSomething went wrong... pid: %d is returned...",pid);
+    printf("\n unknown error occured pid: %d is returned...",pid);
     return 1;
   }
 }
