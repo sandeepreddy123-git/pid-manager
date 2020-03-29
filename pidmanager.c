@@ -73,7 +73,7 @@ int pid_check(int pid)
   }
 }
 
-void *thread_fun(void *pro)              
+void *display(void *pro)              
 {
   int pid = allocate_pid();                
   
@@ -94,30 +94,30 @@ void *thread_fun(void *pro)
 
 int main()
 {
-  int i, no_of_threads;
+  int i,threads;
   printf("Enter no of threads: ");
-  scanf("%d",&no_of_threads);               
+  scanf("%d",&threads);               
   
   int x = allocate_map();                   
   if(x==0)                                  
-    printf("Map allocated...\n");
+    printf("\n array intialised \n");
   else
-    printf("Problem in initializing statuses...\n");
+    printf("error occured\n");
   
                  
-  pthread_t pr_threads[no_of_threads];              
+  pthread_t pr_threads[threads];              
   
-  for(i=0;i<no_of_threads;i++)
+  for(i=0;i<threads;i++)
   {
                                      
-    pthread_create(&pr_threads[i],NULL,thread_fun,NULL);           
+    pthread_create(&pr_threads[i],NULL,display,NULL);           
   }
   
-  for(i=0;i<no_of_threads;i++)              
+  for(i=0;i<threads;i++)              
   {
     pthread_join(pr_threads[i],NULL);                     
   }
   
-  printf("\n...Program Successfully terminated...\n");
+  printf("\n...Program completed\n");
 }
   
