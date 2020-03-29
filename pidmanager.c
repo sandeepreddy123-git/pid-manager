@@ -23,9 +23,9 @@ int allocate_pid()
   int i;
   for(i=0;i<ARRAY;i++)
   {
-    if(pid_status[i]==0)   
+    if(statusofpid[i]==0)   
     {
-      pid_status[i]=1;     
+      statusofpid[i]=1;     
       return i+100;        
     }
   }
@@ -35,22 +35,22 @@ int allocate_pid()
 void release_pid(int p)
 {
   int pid=p-100;           
-  pid_status[pid]=0;        
+  statusofpid[pid]=0;        
 }
 
 void display()
 {
   int i,c=0;
   
-  for(i=0;i<ARR_SIZE;i++)
+  for(i=0;i<ARRAY;i++)
   {
-    if(pid_status[i]==1)              
+    if(statusofpid[i]==1)              
     {
-      printf("\n[%d] = %d\t",i+100,pid_status[i]);
+      printf("\n[%d] = %d\t",i+100,statusofpid[i]);
       c++;
     }
   }
-  printf("\nPids in Use: %d",c);
+  printf("\nPids that are currently working: %d",c);
   
 }
 
