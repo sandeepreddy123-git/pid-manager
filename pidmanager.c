@@ -73,7 +73,7 @@ int pid_check(int pid)
   }
 }
 
-void *display(void *pro)              
+void *display1(void *pro)              
 {
   int pid = allocate_pid();                
   
@@ -110,7 +110,7 @@ int main()
   for(i=0;i<threads;i++)
   {
                                      
-    pthread_create(&pr_threads[i],NULL,display,NULL);           
+    pthread_create(&pr_threads[i],NULL,display1,NULL);           
   }
   
   for(i=0;i<threads;i++)              
